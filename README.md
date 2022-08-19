@@ -1,2 +1,2 @@
 # python-advanced
-Lab and exercises of the Python Advanced course.
+Lab and exercises - SoftUni Python Software Engineering Course: Python Advanced
