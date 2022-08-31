@@ -47,7 +47,7 @@ while products:
 
     for robot_name in [k for k in processing_robots.keys()]:
         processing_robots[robot_name] -= 1
-        if processing_robots[robot_name] == 0:
+        if processing_robots[robot_name] <= 0:
             processing_robots.pop(robot_name)
 
     current_product = products.popleft()
