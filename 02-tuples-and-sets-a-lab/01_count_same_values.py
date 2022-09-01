@@ -14,4 +14,4 @@ for number in numbers:
 
 
 for key, value in occurrences_count.items():
-    print(f'{key} - {value} times')
+    print(f'{key:.1f} - {value} times')
