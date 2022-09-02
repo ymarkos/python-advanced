@@ -1,33 +1,32 @@
-num_guests = int(input())
-invited_guests = {input() for _ in range(num_guests)}
+def is_vip(guest):
+    return guest[0].isdigit()
+
+
+num_reservations = int(input())
+
+vip_guest = set()
+regular_guest = set()
+
+for _ in range(num_reservations):
+    reservation = input()
+    if is_vip(reservation):
+        vip_guest.add(reservation)
+    else:
+        regular_guest.add(reservation)
 
 while True:
     coming_guest = input()
     if coming_guest == 'END':
         break
-    elif len(coming_guest) == 8 and coming_guest in invited_guests:
-        invited_guests.remove(coming_guest)
-
-vip_guests = set()
-regular_guests = set()
-for guest in invited_guests:
-    if guest[0].isdigit():
-        vip_guests.add(guest)
+    if is_vip(coming_guest):
+        vip_guest.remove(coming_guest)
     else:
-        regular_guests.add(guest)
-if invited_guests:
-    print(len(invited_guests))
+        regular_guest.remove(coming_guest)
+
+number = len(vip_guest) + len(regular_guest)
+if number > 0:
+    print(number)
 else:
-    invited_guests = 0
-    print(invited_guests)
-if vip_guests:
-    vip_guests_sorted = sorted(vip_guests)
-    for guest in vip_guests_sorted:
-        print(guest)
-if regular_guests:
-    regular_guests_sorted = sorted(regular_guests)
-    for guest in regular_guests_sorted:
-        print(guest)
-
-
-
+    print(0)
+[print(guest) for guest in sorted(vip_guest)]
+[print(guest) for guest in sorted(regular_guest)]
