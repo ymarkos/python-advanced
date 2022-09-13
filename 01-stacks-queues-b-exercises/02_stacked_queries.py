@@ -12,7 +12,7 @@ for _ in n times receive queries:
         print the minimum number in the stack
 print the stack from to the top to the bottom
 """
-
+# 1st option
 numbers = []
 num_queries = int(input())
 
@@ -34,4 +34,27 @@ while numbers:
     numbers_reversed.append(str(numbers.pop()))
 print(', '.join(numbers_reversed))
 
-
+# # 2nd option
+#
+# n = int(input())
+# stack = []
+#
+# for _ in range(n):
+#     command = input()
+#     query = command[0]
+#     if query == '1':
+#         stack.append(int(command.split()[1]))
+#     elif query == '2':
+#         if stack:
+#             stack.pop()
+#     elif query == '3':
+#         if stack:
+#             print(max(stack))
+#     elif query == '4':
+#         if stack:
+#             print(min(stack))
+#
+# stack_length = len(stack)
+# for idx in range(len(stack)):
+#     spacing = ', ' if idx < len(stack) - 1 else ''
+#     print(str(stack.pop()) + spacing, end="")
