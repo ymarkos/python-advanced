@@ -42,3 +42,25 @@ if not enough_food:
         print(order, end=' ')
 else:
     print(f'Orders complete')
+
+# from collections import deque
+#
+# tot_amount = int(input())
+#
+# orders = deque(int(el) for el in input().split())
+#
+# while len(orders) >= 1:
+#     current_customer = orders[0]
+#     if tot_amount < current_customer:
+#         break
+#     else:
+#         tot_amount -= current_customer
+#         orders.popleft()
+#
+# print(max(orders))
+#
+# if len(orders) == 0:
+#     print('Orders complete')
+# else:
+#     remaining = [str(el) for el in orders]
+#     print(f'Orders left: {" ".join(remaining)}')
