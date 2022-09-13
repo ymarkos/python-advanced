@@ -31,10 +31,7 @@ for _ in range(num_queries):
 
 numbers_reversed = []
 while numbers:
-    numbers_reversed.append(numbers.pop())
-
-num_str = [str(x) for x in numbers_reversed]
-print(', '.join(num_str))
-
+    numbers_reversed.append(str(numbers.pop()))
+print(', '.join(numbers_reversed))
 
 
