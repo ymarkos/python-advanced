@@ -16,7 +16,8 @@ print the count_rack
 
 """
 
-clothes_stack = [int(el) for el in input().split()]
+# clothes_stack = [int(el) for el in input().split()]
+clothes_stack = list(map(int, input().split()))
 
 capacity_rack = int(input())
 current_capacity = capacity_rack
