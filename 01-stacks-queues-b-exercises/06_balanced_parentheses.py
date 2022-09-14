@@ -1,28 +1,28 @@
-data = input()
+expression = input()
 
-data_stack = []
-count = 0
-for el in data:
-    if el == "{":
-        count -= 1
-        data_stack.append(el)
-    elif el == "[":
-        count -= 1
-        data_stack.append(el)
-    elif el == "(":
-        count -= 1
-        data_stack.append(el)
-    if el == ")" and data_stack[-1] == "(":
-        count += 1
-        data_stack.pop()
-    elif el == "]" and data_stack[-1] == "[":
-        count += 1
-        data_stack.pop()
-    elif el == "}" and data_stack[-1] == '{':
-        count += 1
-        data_stack.pop()
+opening_brackets = []
 
-if count == 0:
-    print('YES')
-else:
+pairs = {
+    '{': '}',
+    '[': ']',
+    '(': ')'
+}
+balanced = True
+
+for ch in expression:
+    if ch in '{[(':
+        opening_brackets.append(ch)
+    elif not opening_brackets:
+        balanced = False
+    else:
+        last_opening_bracket = opening_brackets.pop()
+        if pairs[last_opening_bracket] != ch:
+            balanced = False
+    if not balanced:
+        break
+
+if not balanced or opening_brackets:
     print('NO')
+else:
+    print('YES')
+
