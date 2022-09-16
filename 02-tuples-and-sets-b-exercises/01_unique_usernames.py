@@ -1,8 +1,7 @@
 num = int(input())
 
-names = set()
-
+unique_names = set()
 for _ in range(num):
-    name = input()
-    names.add(name)
-[print(name) for name in names]
+    unique_names.add(input())
+
+[print(name) for name in unique_names]
